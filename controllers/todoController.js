@@ -13,15 +13,13 @@ router.get('/',(req,res)=>{
 })
 
 router.post('/api/todo',(req,res)=>{
-    todo.insertItem([
-        'list_item','complete'
-    ], [
-        req.body.list_Item,req.body.complete
-    ],(result)=>{
-        res.json({id:result.insertId}) //where is insertID coming from? Joe uses in his cat example for his post method
+    todo.insertItem(req.body.list_item
+    ,(result)=>{
+        res.json({id:result.id})
     })
 })
-// router.put('/',(req,res)=>{
+// router.put('/api/todo/:id',(req,res)=>{
+        // let id = req.params.id;
 //     todo.selectAll(data=>{
 //         let hbsobject = {
 //             //

@@ -1,12 +1,12 @@
 let mysql = require('mysql');
 
-let connection = function(){
 
 var connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
     password : 'root',
-    database : 'todo_db'
+    database : 'todo_db',
+    port:3306
   });
    
   connection.connect(err => {
@@ -17,6 +17,4 @@ var connection = mysql.createConnection({
    
     console.log('connected as id ' + connection.threadId);
   });
-}
-
 module.exports = connection;

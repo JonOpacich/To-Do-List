@@ -2,22 +2,22 @@ let orm = require('../config/orm');
 
 
 let todo = {
-    selectAll: (cb) => {
+    selectAll: () => {
         orm.selectAll((res) => {
             cb(res);
         })
     },
-    insertItem: (task,cb) => {
+    insertItem: (task) => {
         orm.insertOne(task,(res) => {
-            cb(res);
+            return res;
         })
     },
-    complete: (val,id,cb) => {
+    complete: (val,id) => {
         orm.updateOne('complete',val,id,(res) => {
             cb(res);
         })
     },
-    edit: (val,id,cb) => {
+    edit: (val,id) => {
         orm.updateOne('list_Item',val,id,(res) => {
             cb(res);
         })
