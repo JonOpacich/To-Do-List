@@ -2,34 +2,39 @@ let connection = require('../config/connection');
 
 //object relational mapper in vanilla js
 let orm = {
-    selectAll: () => {
+    All: (cb) => {
         connection.query('SELECT * FROM list;', (err, result) => {
             if (err) {
-                console.error('error connecting: ' + err.stack);
-                return;
+                throw err;
             }
-            console.log(result);
             cb(result);
         })
     },
-    insertOne: (task) => {
+    Insert: (task, cb) => {
         let queryString = 'INSERT INTO list (list_item, complete) VALUES (?,0);';
         connection.query(queryString, [task], (err, result) => {
             if (err) {
-                console.error('error connecting: ' + err.stack);
-                return;
+                throw err;
             }
-            return result;
+            cb(result);
         })
     },
-    updateOne: (col,val,id) => {
-        let queryString = 'UPDATE list SET ?? = ? WHERE id=?;' ;
-        connection.query(queryString, [col,val,id], (err, result) => {
+    Update: (status, id, cb) => {
+        let queryString = 'UPDATE list SET complete = ? WHERE id=?;';
+        connection.query(queryString, [status, id], (err, result) => {
             if (err) {
-                console.error('error connecting: ' + err.stack);
-                return;
+                throw err;
             }
-            console.log(result);
+            cb(result);
+        })
+    },
+
+    Delete: (cb) => {
+        let queryString = 'DELETE FROM list WHERE complete=1';
+        connection.query(queryString, (err, result) => {
+            if (err) {
+                throw err;
+            }
             cb(result);
         })
     }

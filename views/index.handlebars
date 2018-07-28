@@ -5,25 +5,15 @@
 
   {{#each items}}
     {{#unless complete}}
-        <p>
-	        <button class="status" data-id="{{id}}" data-complete="true">
-                X
-	         </button>
-	        {{list_item}}
-        </p>
+      {{> status/status-block status=1}}
     {{/unless}}
   {{/each}}
 
-<h2>Completed: </h2>
+<h2> <button class="delete">Clear</button> Completed:</h2>
 
   {{#each items}}
     {{#if complete}}
-        <p>
-	        <button class="status" data-id="{{id}}" data-complete="false">
-                X
-	        </button>
-	        {{list_item}}
-        </p>
+        {{> status/status-block status=0}}
     {{/if}}
   {{/each}}
 

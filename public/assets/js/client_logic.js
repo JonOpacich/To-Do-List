@@ -1,20 +1,17 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function () {
-    $(".status").on("click", event=> {
+    $(".status").on("click", function(event) {
         let id = $(this).data("id");
         let newStatus = $(this).data("complete");
-
-        let newStatusState = {
-            complete: newStatus
-        };
-
+        let newStatusState= {
+            complete:newStatus,
+        }
         // Send the PUT request.
         $.ajax("/api/todo/" + id, {
             type: "PUT",
             data: newStatusState
         }).then(
             function () {
-                console.log("changed sleep to", newStatus);
                 // Reload the page to get the updated list
                 location.reload();
             }
@@ -35,10 +32,25 @@ $(function () {
             data: newTask
         }).then(
             function () {
-                console.log("created new cat"); //delete
                 // Reload the page to get the updated list
                 location.reload();
             }
         );
     });
+
+    $(".delete").on("click", function (event) {
+        // Make sure to preventDefault on a submit event.
+        event.preventDefault();
+
+        // Send the POST request.
+        $.ajax("/api/todo", {
+            type: "DELETE"
+        }).then(
+            function () {
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+    });
+
 });
