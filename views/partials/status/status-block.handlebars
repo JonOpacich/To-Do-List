@@ -1,6 +1,8 @@
-<p>
-	<button class="status" data-id="{{id}}" data-complete="{{status}}">
-         {{#if status}}X{{else}}Add Back to List{{/if}}
-	</button>
-	{{list_item}}
+<p class='items'>
+<br>
+<button class="status" data-id="{{id}}" data-complete="{{status}}">
+{{#if status}}&#9744;{{else}}&#9745;{{/if}}
+</button>
+{{#if status}}{{list_item}}{{else}}<strike>{{list_item}}</strike>{{/if}}
 </p>
+

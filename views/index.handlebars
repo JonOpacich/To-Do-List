@@ -1,3 +1,57 @@
+<body class="body">
+  <div class="board w-clearfix">
+    <div class="div-block-4">
+      <img src="assets/img/photo-1421809313281-48f03fa45e9f.jpg" height="300" srcset="assets/img/photo-1421809313281-48f03fa45e9f-p-500x500.jpeg 500w, assets/img/photo-1421809313281-48f03fa45e9f.jpg 700w"
+        sizes="(max-width: 479px) 63vw, 300px" class="image-5">
+      <img src="assets/img/pushpin.png" width="32" height="32" class="image-2 pin4">
+    </div>
+    <div class="div-block-2 w-clearfix">
+      <img src="assets/img/photo-1444090542259-0af8fa96557e.jpg" height="400" class="image-3">
+      <img src="assets/img/pushpin.png" width="32" height="32" class="image-2 pin3">
+    </div>
+    <div class="div-block-5">
+      <img src="assets/img/pushpin.png" width="32" height="32" class="image-2 pin5">
+      <img src="assets/img/pushpin.png" width="32" height="32" class="image-2 pin6">
+      <h1 class="heading">Add a Task</h1>
+      <div class="w-form">
+        <form id="email-form" name="email-form" class="form create-form">
+          <input type="text" id= 'task-input' maxlength="256" placeholder="e.g. Mow the Lawn " class="list-input w-input">
+          <input type="submit" value="Submit" data-wait="Please wait..." class="submit-button w-button">
+        </form>
+      </div>
+    </div>
+    <div class="list small-list w-clearfix">
+      <div class="div-block">
+        <img src="assets/img/pushpin.png" width="32" height="32" class="image-2">
+      </div>
+      <a id="clear-button" class="link clear-button w-button delete">Clear Completed</a>
+      <h6 class="brand-text">To-Do List</h6>
+      <img src="assets/img/pushpin.png" width="32" height="32" class="image-2 pin2"/>
+        <div>
+        {{#each items}}
+         {{#unless complete}}
+           {{> status/status-block status=1}}
+         {{/unless}}
+        {{/each}}
+
+        {{#each items}}
+          {{#if complete}}
+            {{> status/status-block status=0}}
+          {{/if}}
+        {{/each}}
+        </div>
+    </div>
+  </div>
+</body>
+
+
+
+
+
+
+
+
+
 <h1>To-do List</h1>
 
 <h2>Tasks: </h2>
