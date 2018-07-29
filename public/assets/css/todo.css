@@ -578,7 +578,7 @@ html.w-mod-js *[data-ix="scale-on-scroll"] {
 
 @media (max-width: 1400px) {
   .body{
-    /* overflow:scroll; */
+    overflow:scroll;
   }
   .navigation-link {
     padding: 9px 0px;
