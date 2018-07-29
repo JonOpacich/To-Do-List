@@ -86,7 +86,9 @@ blockquote {
   line-height: 18px;
   letter-spacing: 1px;
 }
-
+#clear-button{
+  background:#3898EC;
+}
 .navigation-link:hover {
   color: #333;
 }
@@ -295,7 +297,7 @@ blockquote {
   background-position: 0px 0px;
   background-size: auto;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 
 .board {
@@ -663,5 +665,8 @@ html.w-mod-js *[data-ix="scale-on-scroll"] {
   .list-input {
     height: 100px;
     margin-top:10px;
+  }
+  .pin8{
+    visibility: hidden;
   }
 }
