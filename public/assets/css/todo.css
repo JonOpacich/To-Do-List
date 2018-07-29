@@ -299,6 +299,7 @@ blockquote {
 }
 
 .board {
+  position:relative;
   display: block;
   width: 1400px;
   height: 900px;
@@ -426,8 +427,8 @@ blockquote {
   right: 0px;
   bottom: 0px;
   z-index: 1;
-  margin-right: 175px;
-  margin-bottom: 22px;
+  margin-right: 10px;
+  margin-bottom: -91px;
   float: right;
   clear: none;
 }
