@@ -17,4 +17,4 @@ Created by: Jonathan W Opacich <br>
 This project was an assignment for the U of M Full Stack Web Developer Bootcamp during Summer 2018. 
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT Jonathan W Opacich 2018.](https://choosealicense.com/licenses/mit/)
