@@ -15,7 +15,7 @@ A full-stack bulletin board-themed task app. The Node package `Handlebars.js` us
 ## Development
 Created by:
   * Jonathan W Opacich 2018.
-The project was an assignment for the U of M Full Stack Web Developer Bootcamp during Summer 2018. 
+This project was an assignment for the U of M Full Stack Web Developer Bootcamp during Summer 2018. 
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
